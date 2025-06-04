@@ -1,0 +1,20 @@
+- name: Snapper installieren
+  import_tasks: install.yml
+
+- name: Check if Snapper Config already exists
+  stat:
+    path: /etc/snapper/configs/root
+  register: snapper_config_root
+
+- name: Snapper Config for Root
+  import_tasks: configure_root.yml
+  when: not snapper_config_root.stat.exists
+
+- name: Check if Snapper Config already exists
+  stat:
+    path: /etc/snapper/configs/home
+  register: snapper_config_home
+
+- name: Snapper Config for Home
+  import_tasks: configure_home.yml
+  when: not snapper_config_home.stat.exists

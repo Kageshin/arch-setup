@@ -1,0 +1,26 @@
+- name: Unmount /.snapshots
+  mount:
+    path: /.snapshots
+    state: unmounted
+
+- name: Remove /.snapshots Folder
+  file:
+    path: /.snapshots
+    state: absent
+
+- name: Create snapper config
+  command: snapper -c root create-config /
+  args:
+    creates: /etc/snapper/configs/root
+
+- name: Delete Snapshots Subvolume created by Snapper
+  command: btrfs subvolume delete /.snapshots
+
+- name: Recreate /.snapshots mount point
+  file:
+    path: /.snapshots
+    state: directory
+    mode: '0750'
+
+- name: Remount Snapshot Subvolumen
+  command: mount -a

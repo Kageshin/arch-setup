@@ -8,3 +8,11 @@
         name: "{{ item }}"
         state: present
       loop: "{{ lookup('file', '../pkglist.txt').splitlines() }}"
+    
+    - name: Enable Snapper for root
+      include_role:
+        name: snapper
+    
+    - name: Install grub-btrfs
+      include_role:
+        name: grub_btrfs

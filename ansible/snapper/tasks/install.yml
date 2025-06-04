@@ -1,0 +1,6 @@
+- name: Install needed Packages for snapper
+  pacman:
+    name:
+      - snapper
+      - snap-pac
+    state: present
