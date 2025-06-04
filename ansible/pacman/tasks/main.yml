@@ -1,0 +1,20 @@
+- name: Aktiviere Farben in Pacman
+  lineinfile:
+    path: /etc/pacman.conf
+    regex: '^#Color'
+    line: "Color"
+  become: true
+
+- name: Bessere Paketlist in Pacman
+  lineinfile:
+    path: /etc/pacman.conf
+    regex: '^#VerbosePkgLists'
+    line: "VerbosePkgLists"
+  become: true
+
+- name: Parallele Downloads in Pacman
+  lineinfile:
+    path: /etc/pacman.conf
+    regex: '^#ParallelDownloads = 5'
+    line: "ParallelDownloads = 5"
+  become: true

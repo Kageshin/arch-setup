@@ -16,5 +16,5 @@ cd ~/Projects/arch-setup/dotfiles
 stow *
 
 echo "[5/5] Ansible ausführen..."
-cd ~/Projects/arch-setup/ansible
+cd ~/Projects/arch-setup/ansible 
 ansible-playbook playbook.yml -K
