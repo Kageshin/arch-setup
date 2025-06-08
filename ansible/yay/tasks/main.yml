@@ -1,0 +1,33 @@
+- name: Check if all needed Packages are Installed 
+  pacman:
+    name:
+      - git
+      - base-devel
+    state: present
+
+- name: Check if yay is installed
+  command: yay --version
+  register: yay_check
+  ignore_errors: true
+
+- name: Clone yay from AUR
+  git:
+    repo: https://aur.archlinux.org/yay.git
+    dest: /tmp/yay
+    update: no
+  become: true
+  when: yay_check.rc != 0
+
+- name: Build and install yay
+  command: makepkg --noconfirm --syncdeps --install 
+  args:
+    chdir: /tmp/yay
+  become: true
+  when: yay_check.rc != 0
+
+- name: Remove yay's tmp git repo
+  file:
+    path: /tmp/yay
+    state: absent
+  become: true
+  when: yay_check.rc != 0
