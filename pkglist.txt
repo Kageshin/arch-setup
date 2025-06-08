@@ -4,6 +4,7 @@ base
 base-devel
 btrfs-progs
 efibootmgr
+fzf
 git
 grub
 linux
@@ -19,3 +20,4 @@ openssh
 stow
 terminus-font
 zsh
+zoxide
