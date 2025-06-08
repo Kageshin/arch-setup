@@ -1,2 +1,17 @@
-- name: grub-btrfs installieren
-  import_tasks: install.yml
+- name: Install needed Packages for grub-btrfs
+  pacman:
+    name:
+      - grub-btrfs 
+    state: present
+
+- name: Use Grub-btrfs-overlayfs for Read-Only Snapshots
+  become: true
+  ansible.builtin.lineinfile:
+    path: /etc/mkinitcpio.conf
+    #regexp: '(?!.*grub-btrfs-overlayfs)^HOKKS=\((.*)\)'
+    #line: 'HOOKS=(\1 grub-btrfs-overlayfs)'
+    regex: '^HOOKS=\(.*\)\s*$' 
+    line: 'HOOKS=(base udev autodetect microcode modconf kms keyboard keymap consolefont encrypt lvm2 block filesystems fsck grub-btrfs-overlayfs)'
+    backrefs: yes
+    state: present
+  notify: rebuild initramfs

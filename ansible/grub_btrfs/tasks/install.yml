@@ -1,5 +1,0 @@
-- name: Install needed Packages for snapper
-  pacman:
-    name:
-      - grub-btrfs 
-    state: present
