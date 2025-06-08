@@ -1,6 +1,5 @@
 # TODO
 
-- Setup arch-linux Git Repo zu Github Pushen
 - Ansible aus dem Home Ordner verschieben
 - yay für Community Repository installieren
 - zsh Shell mit Plugin Manager
@@ -9,5 +8,3 @@
 - Syncthing einrichten
 - Desktop Umgebung installieren
 - Alltagsprogramme + Netzwerktools
-
-- booten in snapshot ausprobieren

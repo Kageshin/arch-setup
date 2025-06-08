@@ -1,9 +1,13 @@
+# Installiere die nötigen Packages für grub-btrfs
+# inotify-tools wird für den deamon benötigt, welcher bei neuen Snapshots das Grub Menü aktuallisiert
 - name: Install needed Packages for grub-btrfs
   pacman:
     name:
       - grub-btrfs 
+      - inotify-tools
     state: present
 
+# Ermöglicht das Booten in Read-Only Snapshots, alle Änderungen sind nur im RAM
 - name: Use Grub-btrfs-overlayfs for Read-Only Snapshots
   become: true
   ansible.builtin.lineinfile:
@@ -15,3 +19,10 @@
     backrefs: yes
     state: present
   notify: rebuild initramfs
+
+- name: Enable grub-btrfsd
+  systemd:
+    name: grub-btrfsd.service
+    enabled: true
+    state: "started"
+  become: true
