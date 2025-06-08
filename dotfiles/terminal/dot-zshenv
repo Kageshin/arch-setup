@@ -6,3 +6,7 @@ export XDG_STATE_HOME="${XDG_STATE_HOME:-$HOME/.local/state}"
 
 # set config folder for zsh
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+
+# config go Path
+export GOPATH="$XDG_DATA_HOME"/go
+export GOMODCACHE="$XDG_CACHE_HOME"/go/mod
