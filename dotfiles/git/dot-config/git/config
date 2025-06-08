@@ -3,3 +3,5 @@
 	name = Kageshin 
 [init]
 	defaultBranch = main
+[core]
+	editor = nvim
