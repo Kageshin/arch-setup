@@ -15,6 +15,7 @@ man-db
 man-pages
 neovim
 networkmanager
+openssh
 stow
 terminus-font
 zsh
