@@ -1,0 +1,8 @@
+- name: Aktiviere das starfield Theme für Grub 
+  become: true
+  ansible.builtin.lineinfile:
+    path: /etc/default/grub
+    regex: '^#GRUB_THEME=.*$' 
+    line: 'GRUB_THEME="/boot/grub/themes/starfield/theme.txt"'
+    state: present
+  notify: Regenerate Grub.cfg 

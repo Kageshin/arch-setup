@@ -1,8 +1,9 @@
 # TODO
 
 - Ansible aus dem Home Ordner verschieben
-- GRUB Theme
 - zsh Shell mit Plugin Manager
+    - Grundlagen Plugins (Autocompletions, ...)
+    - Snippets
     - Oh my Posh
 - nvim Einrichten (ThePrimeagen: 0 to LSP: Neovim RC From Scrath)
 - Syncthing einrichten

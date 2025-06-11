@@ -9,7 +9,8 @@
       loop: "{{ lookup('file', '../pkglist.txt').splitlines() }}"
   
   roles:
-    - pacman
-    - snapper
-    - grub_btrfs
-    - yay
+    #- pacman
+    - grub
+    #- snapper
+    #- grub_btrfs
+    #- yay
