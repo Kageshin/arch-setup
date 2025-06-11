@@ -17,6 +17,7 @@ man-pages
 neovim
 networkmanager
 openssh
+ripgrep
 stow
 terminus-font
 zsh
