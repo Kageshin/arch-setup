@@ -24,6 +24,7 @@ zinit snippet OMZP::git
 zinit snippet OMZP::sudo
 zinit snippet OMZP::archlinux
 zinit snippet OMZP::command-not-found
+zinit snippet OMZP::alias-finder
 
 # Load completions + XDG-Shema
 [ -d "$XDG_CACHE_HOME"/zsh ] || mkdir -p "$XDG_CACHE_HOME"/zsh
@@ -64,7 +65,10 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}" # Enable Colors when Aut
 zstyle ':completion:*' menu no # Disable default completions menu (replaced by fzf)
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath' # Show Preview von cd
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath' # Show Preview von when using zoxide
-
+zstyle ':omz:plugins:alias-finder' autoload yes
+zstyle ':omz:plugins:alias-finder' longer yes
+zstyle ':omz:plugins:alias-finder' exact yes
+zstyle ':omz:plugins:alias-finder' cheaper yes
 
 # Shell integrations
 eval "$(fzf --zsh)"
