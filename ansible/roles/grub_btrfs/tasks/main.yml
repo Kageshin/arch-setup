@@ -3,7 +3,7 @@
 - name: Install needed Packages for grub-btrfs
   pacman:
     name:
-      - grub-btrfs 
+      - grub-btrfs
       - inotify-tools
     state: present
 
@@ -12,11 +12,11 @@
   become: true
   ansible.builtin.lineinfile:
     path: /etc/mkinitcpio.conf
-    #regexp: '(?!.*grub-btrfs-overlayfs)^HOKKS=\((.*)\)'
-    #line: 'HOOKS=(\1 grub-btrfs-overlayfs)'
-    regex: '^HOOKS=\(.*\)\s*$' 
+    # regexp: '(?!.*grub-btrfs-overlayfs)^HOKKS=\((.*)\)'
+    # line: 'HOOKS=(\1 grub-btrfs-overlayfs)'
+    regex: '^HOOKS=\(.*\)\s*$'
     line: 'HOOKS=(base udev autodetect microcode modconf kms keyboard keymap consolefont encrypt lvm2 block filesystems fsck grub-btrfs-overlayfs)'
-    backrefs: yes
+    backrefs: true 
     state: present
   notify: rebuild initramfs
 

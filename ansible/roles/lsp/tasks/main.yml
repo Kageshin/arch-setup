@@ -1,0 +1,9 @@
+# Installiere die nötigen Packages für unterschiedliche LSPs
+- name: Installiere LSPs
+  pacman:
+    name:
+      - lua-language-server
+      - ansible-lint
+      - ansible-language-server
+      - bash-language-server
+    state: present
