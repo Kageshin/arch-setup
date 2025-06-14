@@ -1,7 +1,8 @@
 -- Enable the LSP server
 vim.lsp.enable({
     "lua_ls",
-    "ansiblels"
+    "ansiblels",
+    "bashls"
 })
 
 -- Set up an LspAttach autocommand to enable features based on cliennt
