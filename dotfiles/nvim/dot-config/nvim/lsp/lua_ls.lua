@@ -15,7 +15,7 @@ return {
             workspace = {
                 libary = {
                     vim.fn.expand("$VIMRUNTIME/lua"),
-                    vim.fn.stdpath("data" .. "/lazy/lazy.nvim/lua/lazy"),
+                    vim.fn.stdpath("data") .. "/lazy/lazy.nvim/lua/lazy",
                     vim.fn.stdpath("config"),
                 },
                 checkThirdParty = false,
