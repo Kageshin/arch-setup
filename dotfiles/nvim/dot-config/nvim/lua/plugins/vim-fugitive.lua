@@ -1,13 +1,16 @@
-return {
-	"tpope/vim-fugitive",
-	lazy = true,
+local function keymaps()
+    return {
+        {
+            "<leader>gs",
+            function() vim.cmd.Git() end,
+            mode = "n",
+            desc = "Git status (fugitive)",
+        },
+    }
+end
 
-	keys = {
-		{
-			"<leader>gs",
-			function() vim.cmd.Git() end,
-			mode = "n",
-			desc = "Git status (fugitive)",
-		},
-	},
+return {
+    "tpope/vim-fugitive",
+    lazy = true,
+    keys = keymaps(),
 }
