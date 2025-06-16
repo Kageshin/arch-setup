@@ -33,15 +33,15 @@ curl -O https://raw.githubusercontent.com/Kageshin/arch-setup/refs/heads/main/bo
 
 ## Configuierte Dienste
 
-- [zsh](zsh)
-- [nvim](nvim)
-- [git](git)
-- [pacman](pacman)
-- [GRUB](grub)
-- [snapper](snapper)
-- [grub-btrfs](grub-btrfs)
-- [yay](yay)
-- [Language Servers](lsps)
+- [zsh](#zsh)
+- [nvim](#nvim)
+- [git](#git)
+- [pacman](#pacman)
+- [GRUB](#grub)
+- [snapper](#snapper)
+- [grub-btrfs](#grub-btrfs)
+- [yay](#yay)
+- [Language Servers](#lsps)
 
 ### zsh
 
