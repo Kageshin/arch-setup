@@ -5,16 +5,16 @@ Meine Konfiguration für Arch Linux, nach manueller Installation des Systems.
 ## Grundlage für Installation
 
 - 2 Festplatten
-    - Platte 1: Partitionen /efi, /boot, /root
-    - Platte 2: Partitionen /home
+  - Platte 1: Partitionen /efi, /boot, /root
+  - Platte 2: Partitionen /home
 - Partitionen /root & /home
-    - Nutzung von LVM auf LUKS
-    - Dateisystem btrfs (Snapshots)
+  - Nutzung von LVM auf LUKS
+  - Dateisystem btrfs (Snapshots)
 - Bootmanager: GRUB
 
 ## Anwendung der Konfig
 
-```sh
+``` sh
 curl -O https://raw.githubusercontent.com/Kageshin/arch-setup/refs/heads/main/bootstrap.sh | bash
 ```
 
@@ -22,17 +22,17 @@ curl -O https://raw.githubusercontent.com/Kageshin/arch-setup/refs/heads/main/bo
 
 - Ansible aus dem Home Ordner verschieben
 - zsh Shell mit Plugin Manager
-    - Oh my Posh
+  - Oh my Posh
 - nvim
-    - Theme Installieren
-    - Telescope Theme Selector (NVChad)
-    - LSPs Konfigs für weitere Sprachen
-    - Markdown Unterstützung
-    - Personal Knowlege System (PKS) Unterstützung
+  - Theme Installieren
+  - Telescope Theme Selector (NVChad)
+  - LSPs Konfigs für weitere Sprachen
+  - Markdown Unterstützung
+  - Personal Knowlege System (PKS) Unterstützung
 - RSS Fead for Arch News
 - Syncthing einrichten
 - Desktop Umgebung installieren
-    - Wayland anstelle von Xorg, da es sicherer ist
+  - Wayland anstelle von Xorg, da es sicherer ist
 - Alltagsprogramme + Netzwerktools
 - Firewall einrichten
 
@@ -100,7 +100,7 @@ Snapshots von snapper automatische im GRUB Bootmenü anzeigen + booten
 
 - Installiere nötige Pakete
 - Ermöglicht booten in Read-Only Snapshots mithilfe von `grub-btrfs-overlayfs` in mkinitcpio.conf
-    - todo: Hooks nicht Hardcoden
+  - todo: Hooks nicht Hardcoden
 - Startet Systemd-Service um Automatisch neue Snapshots zum Bootmenü hinzuzufügen
 
 ### yay
@@ -115,6 +115,7 @@ Paket Manager für AUR
 Installiert Language Server welche zum Beispiel in nvim genutz werden können.
 
 Sprachen:
+
 - lua
 - ansible (+lint)
 - bash

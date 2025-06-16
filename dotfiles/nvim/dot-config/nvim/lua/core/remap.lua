@@ -32,3 +32,8 @@ map("v", "<leader>/", "gc", { desc = "toggle comment", remap = true })
 
 -- Buffer
 map("n", "<leader>b", "<cmd>enew<CR>", { desc = "buffer new" })
+
+-- Diagnostics
+map("n", "<leader>dd", "<cmd>lua vim.diagnostic.open_float()<CR>", { desc = "toggle diagnostic" })
+map("n", "<leader>dj", "<cmd>lua vim.diagnostic.goto_next()<CR>", { desc = "goto next diagnostic" })
+map("n", "<leader>dk", "<cmd>lua vim.diagnostic.goto_prev()<CR>", { desc = "goto prev diagnostic" })

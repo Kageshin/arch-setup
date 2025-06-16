@@ -1,5 +1,5 @@
 return {
-    ensure_installed = { "c", "lua", "luadoc", "vim", "vimdoc" },
+    ensure_installed = { "c", "lua", "luadoc", "vim", "vimdoc", "markdown" },
     sync_install = false,
     auto_install = true,
     highlight = {

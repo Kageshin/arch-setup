@@ -13,17 +13,11 @@ return {
             },
             diagnostics = { globals = { "vim" } },
             workspace = {
-                libary = {
-                    vim.fn.expand("$VIMRUNTIME/lua"),
-                    vim.fn.stdpath("data") .. "/lazy/lazy.nvim/lua/lazy",
-                    vim.fn.stdpath("config"),
-                },
-                checkThirdParty = false,
+                libary = vim.api.nvim_get_runtime_file("", true),
             },
-            completion = { callSnippet = "Replace" },
         },
     },
 
-    single_file_support = true,
+    -- single_file_support = true,
     log_level = vim.lsp.protocol.MessageType.Warning,
 }

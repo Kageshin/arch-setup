@@ -1,6 +1,7 @@
 # Installiere die nötigen Packages für grub-btrfs
 # inotify-tools wird für den deamon benötigt, welcher bei neuen Snapshots das Grub Menü aktuallisiert
 - name: Install needed Packages for grub-btrfs
+  become: true
   pacman:
     name:
       - grub-btrfs
@@ -16,13 +17,13 @@
     # line: 'HOOKS=(\1 grub-btrfs-overlayfs)'
     regex: '^HOOKS=\(.*\)\s*$'
     line: 'HOOKS=(base udev autodetect microcode modconf kms keyboard keymap consolefont encrypt lvm2 block filesystems fsck grub-btrfs-overlayfs)'
-    backrefs: true 
+    backrefs: true
     state: present
   notify: rebuild initramfs
 
 - name: Enable grub-btrfsd
+  become: true
   systemd:
     name: grub-btrfsd.service
     enabled: true
     state: "started"
-  become: true

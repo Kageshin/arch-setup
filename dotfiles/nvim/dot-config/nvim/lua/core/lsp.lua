@@ -2,7 +2,8 @@
 vim.lsp.enable({
     "lua_ls",
     "ansiblels",
-    "bashls"
+    "bashls",
+    "iwes",
 })
 
 -- Set up an LspAttach autocommand to enable features based on cliennt
@@ -26,6 +27,19 @@ vim.api.nvim_create_autocmd('LspAttach', {
                 end,
             })
         end
+
+        if client.supports_method('textDocument/codeAction') then
+            vim.keymap.set("n", "<leader>m", function() vim.lsp.buf.code_action() end,
+                { buffer = args.buf, desc = "lsp code action" })
+        end
+        if client.supports_method('textDocument/definition') then
+            vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end,
+                { buffer = args.buf, desc = "lsp code action" })
+        end
+        if client.supports_method('textDocument/hover') then
+            vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end,
+                { buffer = args.buf, desc = "lsp code action" })
+        end
     end,
 })
 
@@ -40,3 +54,13 @@ vim.diagnostic.config({
     underline = true,
     severity_sort = true,
 })
+
+-- Custom Command for Listing LspCapabilities
+vim.api.nvim_create_user_command("LspCapabilities", function()
+    local buf = vim.api.nvim_get_current_buf()
+    local clients = vim.lsp.get_clients({ bufnr = buf })
+    for _, client in ipairs(clients) do
+        print(" LSP: " .. client.name)
+        print(vim.inspect(client.server_capabilities))
+    end
+end, {})

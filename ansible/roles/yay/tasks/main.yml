@@ -1,4 +1,5 @@
-- name: Check if all needed Packages are Installed 
+- name: Check if all needed Packages are Installed
+  become: true
   pacman:
     name:
       - git
@@ -14,12 +15,12 @@
   git:
     repo: https://aur.archlinux.org/yay.git
     dest: /tmp/yay
-    update: no
+    update: false
   become: true
   when: yay_check.rc != 0
 
 - name: Build and install yay
-  command: makepkg --noconfirm --syncdeps --install 
+  command: makepkg --noconfirm --syncdeps --install
   args:
     chdir: /tmp/yay
   become: true

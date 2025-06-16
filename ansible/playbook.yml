@@ -1,17 +1,19 @@
-- hosts: local
-  become: true
+- name: Playbook for my ArchLinux Setup
+  hosts: local
 
   pre_tasks:
     - name: Install packages
+      become: true
       pacman:
         name: "{{ item }}"
         state: present
       loop: "{{ lookup('file', '../pkglist.txt').splitlines() }}"
-  
+
   roles:
     - pacman
     - grub
     - snapper
     - grub_btrfs
     - yay
+    - rustup
     - lsp

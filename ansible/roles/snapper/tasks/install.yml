@@ -1,4 +1,5 @@
 - name: Install needed Packages for snapper
+  become: true
   pacman:
     name:
       - snapper

@@ -38,3 +38,22 @@ g.loaded_node_provider = 0
 g.loaded_python3_provider = 0
 g.loaded_perl_provider = 0
 g.loaded_ruby_provider = 0
+
+-- Minimal number of screen lines to keep above and below the cursor.
+vim.o.scrolloff = 10
+
+-- Show <tab> and trailing spaces
+vim.o.list = true
+
+-- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
+-- instead raise a dialog asking if you wish to save the current file(s) See `:help 'confirm'`
+vim.o.confirm = true
+
+-- Highlight when yanking (copying) text.
+-- Try it with `yap` in normal mode. See `:h vim.hl.on_yank()`
+vim.api.nvim_create_autocmd('TextYankPost', {
+    desc = 'Highlight when yanking (copying) text',
+    callback = function()
+        vim.hl.on_yank()
+    end,
+})

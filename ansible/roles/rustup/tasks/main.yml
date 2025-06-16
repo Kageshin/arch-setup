@@ -1,0 +1,12 @@
+- name: Install needed Packages for rustup
+  become: true
+  pacman:
+    name:
+      - rustup
+    state: present
+
+- name: Set Default Toolchain to stable
+  become: false
+  command: rustup default stable
+  args:
+    creates: "{{ ansible_env.XDG_DATA_HOME }}/.rustup/toolchain/stable"
