@@ -17,9 +17,9 @@ source "${ZINIT_HOME}/zinit.zsh"
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
+zinit light Aloxaf/fzf-tab # Fuzy Finder
 
-# Add in snippets
+# Add in snippets / aliases from Oh-My-Zsh
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
 zinit snippet OMZP::archlinux
@@ -71,15 +71,15 @@ zstyle ':omz:plugins:alias-finder' exact yes
 zstyle ':omz:plugins:alias-finder' cheaper yes
 
 # Shell integrations
-eval "$(fzf --zsh)"
-eval "$(zoxide init --cmd cd zsh)"
+eval "$(fzf --zsh)" # FuzyFinder
+eval "$(zoxide init --cmd cd zsh)" # Better cd
 
 # Options
 # Kommand: "set -o" für eine List von Optionen
 unsetopt beep
 
 
-# Prompt Config
+# todo: Prompt Config
 autoload -Uz promptinit
 promptinit
 prompt walters

@@ -30,3 +30,32 @@ curl -O https://raw.githubusercontent.com/Kageshin/arch-setup/refs/heads/main/bo
     - Wayland anstelle von Xorg, da es sicherer ist
 - Alltagsprogramme + Netzwerktools
 - Firewall einrichten
+
+## Configuierte Dienste
+
+- [zsh](zsh)
+- [nvim](nvim)
+- [git](git)
+- [pacman](pacman)
+- [GRUB](grub)
+- [snapper](snapper)
+- [grub-btrfs](grub-btrfs)
+- [yay](yay)
+- [Language Servers](lsps)
+
+### zsh
+
+- Auslagerung von Datein in `.config/zsh`
+- Umgebungsvariablen für XDG-Standard
+- Pakagemanager zinit
+- Aliase in Eigener Datei: `.config/shell/alias`
+
+### nvim
+### git
+### pacman
+### GRUB
+### snapper
+### grub-btrfs
+### yay
+### LSPs
+

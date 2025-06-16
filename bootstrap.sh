@@ -9,7 +9,7 @@ echo "[2/5] Projects Ordern erstellen..."
 mkdir -p ~/Projects
 
 echo "[2/5] Repo klonen..."
-#git clone https://github.com/Kageshin/arch-setup.git ~/Projects/arch-setup
+git clone https://github.com/Kageshin/arch-setup.git ~/Projects/arch-setup
 
 echo "[4/5] Dotfiles vorbereiten..."
 cd ~/Projects/arch-setup/dotfiles
