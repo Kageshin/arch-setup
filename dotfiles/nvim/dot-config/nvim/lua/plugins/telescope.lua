@@ -1,3 +1,5 @@
+-- File Selector Plugin
+
 local function keybindings()
     local builtin = require("telescope.builtin")
     return {

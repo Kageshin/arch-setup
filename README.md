@@ -25,6 +25,7 @@ curl -O https://raw.githubusercontent.com/Kageshin/arch-setup/refs/heads/main/bo
     - Oh my Posh
 - nvim
     - Theme Installieren
+    - Telescope Theme Selector (NVChad)
     - LSPs Konfigs für weitere Sprachen
     - Markdown Unterstützung
     - Personal Knowlege System (PKS) Unterstützung

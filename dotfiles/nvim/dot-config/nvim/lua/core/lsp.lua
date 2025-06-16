@@ -29,8 +29,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end,
 })
 
+-- Better Autocomplete
 vim.cmd("set completeopt+=noselect")
 
+-- Diagnostic Config
 vim.diagnostic.config({
     virtial_lines = { prefix = "o", source = "if_many" },
     float = { border = "rounded", source = "always" },

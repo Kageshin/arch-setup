@@ -1,3 +1,8 @@
+-- Git Integration in nvim
+-- <leader>gs: Status
+-- cc: Commit
+-- P: Push
+
 local function keymaps()
     return {
         {

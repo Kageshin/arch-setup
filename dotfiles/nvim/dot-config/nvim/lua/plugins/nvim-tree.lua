@@ -1,3 +1,5 @@
+-- File browser
+
 local function keybindings()
     return {
         {

@@ -1,3 +1,5 @@
+-- Better Undo
+
 local function keybindings()
     return {
         {

@@ -4,6 +4,7 @@ local g = vim.g
 
 ----------------------------------------------------------
 
+-- Set Leader Key to <Space>
 g.mapleader = " "
 
 -- Mark Current Line
@@ -31,8 +32,8 @@ o.signcolumn = "yes"
 o.splitbelow = true
 o.splitright = true
 o.timeoutlen = 400
-o.undofile = true
 
+-- Disable Default Providers
 g.loaded_node_provider = 0
 g.loaded_python3_provider = 0
 g.loaded_perl_provider = 0
