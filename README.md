@@ -27,7 +27,7 @@ curl -O https://raw.githubusercontent.com/Kageshin/arch-setup/refs/heads/main/bo
   - Theme Installieren
   - Telescope Theme Selector (NVChad)
   - LSPs Konfigs für weitere Sprachen
-  - Markdown Unterstützung
+  - Markdown Unterstützung Ausprobieren
   - Personal Knowlege System (PKS) Unterstützung
 - RSS Fead for Arch News
 - Syncthing einrichten

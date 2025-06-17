@@ -18,3 +18,39 @@
     path: /etc/pacman.conf
     regex: '^#ParallelDownloads = 5'
     line: "ParallelDownloads = 5"
+
+# Reflector (Auto Update Mirrorlist)
+
+- name: Install Reflector
+  become: true
+  pacman:
+    name:
+      - reflector
+    state: present
+
+- name: Replace Reflector Config
+  become: true
+  ansible.builtin.copy:
+    content: |
+      --country Germany
+      --sort rate
+      --latest 20
+      --save /etc/pacman.d/mirrorlist
+    dest: /etc/xdg/reflector/reflector.conf
+    owner: root
+    group: root
+    mode: '0644'
+    backup: true
+
+- name: Single Execution
+  become: true
+  ansible.builtin.systemd:
+    name: reflector.service
+    state: started
+
+- name: Start Reflector Timer Service
+  become: true
+  ansible.builtin.systemd:
+    name: reflector.timer
+    state: started
+    enabled: true
