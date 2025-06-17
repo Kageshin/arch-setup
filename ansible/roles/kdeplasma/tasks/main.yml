@@ -1,0 +1,67 @@
+- name: Install needed Packages
+  become: true
+  pacman:
+    name:
+      - plasma-desktop  # Base Package
+      - pipewire-jack   # AutoAuswahl for plasma-desktop
+      - qt6-multimedia-ffmpeg # AutoAuswahl for plasma-desktop
+      - phonon-qt6-mpv  # AutoAuswahl for plasma-desktop
+      - sddm            # Display Manager
+      - sddm-kcm        # Display Manger Config for KDE
+      - alacritty       # Terminal Emulator
+      - dolphin-plugins # Git Integratin in dolphin
+      - plasma-nm       # NetworkManager snippet
+      - plasma-pa       # Pulseaudio for plasma
+      - bluedevil       # Bluetooth
+      - spectacle       # KDE Screenshots
+      - plasma-systemmonitor # Systemmonitoring
+
+      - kde-system-meta # Kde System Paket
+      # Aus kde-educational-meta
+      - kiten           # Japansches Reference/Study Tool
+      - kgeography      # Geography Trainer
+      - artikulate      # Improve Pronunciation
+      # From kde-games-meta
+      - kmines          # Minesweeper
+      - kpat            # Solitaer
+      # From kde-graphics-meta
+      - arianna         # Ebook Reader
+      - colord-kde      # Same Color across multible devices
+      - gwenview        # Image Viewer
+      - kcolorchooser   # Color Choser
+      - kgraphviewer    # Grapfile Viewer
+      - koko            # Image Gallery
+      - okular          # Document Viewer
+      - svgpart         # SVG Viwer
+      # From kde-multimedia-meta
+      - elisa           # Simple Music Player + Search
+      - ffmpegthumbs    # Thumbnails for videos
+      - juk             # Music Mamagement Software
+      - kamoson         # Webcam Recoder
+      - kmix            # Volume Controll Programm
+      # From kde-network-meta
+      - alligator       # RSS Reader (todo: add ArchLinux)
+      - kdeconnect      # Connect KDE and Smartphone
+      - kdenetwork-filesharing # Filesharing for local Network
+      - kget            # Download Manager
+      - kio-zeroconf    # Network Monitor (For Printer in Network)
+      - krdc            # Remote Desktop Client
+      - krfb            # Remote Desktop Sharing
+      - ktorrent        # BitTorrent for KDE
+      # From kde-office-meta
+      - kde-office-meta
+      # From kde-pim-meta
+      - kde-pim-meta
+      # From kde-utils-meta
+      - ark             # Archiver Tool (zip)
+      - filelight       # Visualise Disk usage
+      - kalk            # Calculator
+      # - kate            # Advanced Text Editor
+      - kcharselect     # Char Selector
+      - kclock          # Timer
+      - kfind           # Finder Files/Folders
+      # From kde-sdk-meta
+      - kompare         # Graphical file diff tool
+      - lokalize        # Translation System
+      - umbrello        # UML modeller
+    state: present
