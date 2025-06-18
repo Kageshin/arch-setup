@@ -33,6 +33,7 @@
   ansible.builtin.copy:
     content: |
       --country Germany
+      --protocol https
       --sort rate
       --latest 20
       --save /etc/pacman.d/mirrorlist
