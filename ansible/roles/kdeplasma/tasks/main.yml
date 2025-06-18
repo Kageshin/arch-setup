@@ -8,14 +8,13 @@
       - phonon-qt6-mpv  # AutoAuswahl for plasma-desktop
       - sddm            # Display Manager
       - sddm-kcm        # Display Manger Config for KDE
-      - alacritty       # Terminal Emulator
-      - dolphin-plugins # Git Integratin in dolphin
-      - plasma-nm       # NetworkManager snippet
-      - plasma-pa       # Pulseaudio for plasma
-      - bluedevil       # Bluetooth
-      - spectacle       # KDE Screenshots
-      - plasma-systemmonitor # Systemmonitoring
+    state: present
 
+- name: Install KDE Packages
+  become: true
+  pacman:
+    name:
+      - fcron           # Implementation for cron
       - kde-system-meta # Kde System Paket
       # Aus kde-educational-meta
       - kiten           # Japansches Reference/Study Tool
@@ -37,7 +36,7 @@
       - elisa           # Simple Music Player + Search
       - ffmpegthumbs    # Thumbnails for videos
       - juk             # Music Mamagement Software
-      - kamoson         # Webcam Recoder
+      - kamoso          # Webcam Recoder
       - kmix            # Volume Controll Programm
       # From kde-network-meta
       - alligator       # RSS Reader (todo: add ArchLinux)
@@ -64,4 +63,20 @@
       - kompare         # Graphical file diff tool
       - lokalize        # Translation System
       - umbrello        # UML modeller
+    state: present
+
+- name: Install Extra Utils
+  become: true
+  pacman:
+    name:
+      - alacritty       # Terminal Emulator
+      - dolphin-plugins # Git Integratin in dolphin
+      - plasma-nm       # NetworkManager snippet
+      - plasma-pa       # Pulseaudio for plasma
+      - bluedevil       # Bluetooth
+      - spectacle       # KDE Screenshots
+      - plasma-systemmonitor # Systemmonitoring
+      - hunspell        # Spellchecking
+      - hunspell-de     # Dictionary DE
+      - hunspell-en_us  # Dictionary EN_US
     state: present
