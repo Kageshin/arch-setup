@@ -80,6 +80,19 @@ unsetopt beep
 
 
 # todo: Prompt Config
-autoload -Uz promptinit
-promptinit
-prompt walters
+#autoload -Uz promptinit
+#promptinit
+#prompt walters
+
+autoload -Uz vcs_info
+setopt prompt_subst
+zstyle ':vcs_info:git:*' formats '  %F{red}%b%f %m %a '
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' check-for-changes true
+precmd() { 
+    vcs_info
+    print -P '%F{cyan}%n%f %F{blue}%B%~%b%f ${vcs_info_msg_0_}'
+}
+PROMPT='%B$%b '
+#PROMPT='%F{green}%*%f %F{magenta}%n%f@%m %F{red}${vcs_info_msg_0_}%f$ '
+RPROMPT='%F{green}%*%f'
