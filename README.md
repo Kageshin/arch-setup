@@ -24,15 +24,13 @@ curl -O https://raw.githubusercontent.com/Kageshin/arch-setup/refs/heads/main/bo
 - zsh Shell mit Plugin Manager
   - Oh my Posh
 - nvim
-  - Theme Installieren
-  - Telescope Theme Selector (NVChad)
-  - LSPs Konfigs für weitere Sprachen
-  - Markdown Unterstützung Ausprobieren
   - Personal Knowlege System (PKS) Unterstützung
+  - KI Unterstützung für PKS
 - RSS Fead for Arch News
   - Akregator from KDE-Plasma
   - Configuration von Akregator zu Repo hinzufügen
 - Syncthing einrichten
+  - Configuration in Git Repo
 - Desktop Umgebung installieren
   - KDE Standartanwendungs config zu repo hinzufügen
 - Alltagsprogramme + Netzwerktools
@@ -50,6 +48,7 @@ curl -O https://raw.githubusercontent.com/Kageshin/arch-setup/refs/heads/main/bo
 - [yay](#yay)
 - [Language Servers](#lsps)
 - [Alacritty](#alacitty)
+- [Syncthing](#syncthing)
 
 ### zsh
 
@@ -122,9 +121,12 @@ Sprachen:
 - lua
 - ansible (+lint)
 - bash
+- iwes (Markdown)
 
 ### Alacritty
 
-Terminal Emulator, configured using `~/.config/alacritty/alacritty.toml`.
-Added GitSubmodule for Themes.
-Installed ttf-jetbrains-nerd-mono font.
+Terminal Emulator, configured using `~/.config/alacritty/alacritty.toml`.Added GitSubmodule for Themes.Installed ttf-jetbrains-nerd-mono font.
+
+### Syncthing
+
+Programm in order to sync folders using a peer-to-peer Network. Download and enable systemd Service.
