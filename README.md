@@ -30,9 +30,11 @@ curl -O https://raw.githubusercontent.com/Kageshin/arch-setup/refs/heads/main/bo
   - Markdown Unterstützung Ausprobieren
   - Personal Knowlege System (PKS) Unterstützung
 - RSS Fead for Arch News
+  - Akregator from KDE-Plasma
+  - Configuration von Akregator zu Repo hinzufügen
 - Syncthing einrichten
 - Desktop Umgebung installieren
-  - Wayland anstelle von Xorg, da es sicherer ist
+  - KDE Standartanwendungs config zu repo hinzufügen
 - Alltagsprogramme + Netzwerktools
 - Firewall einrichten
 
@@ -47,6 +49,7 @@ curl -O https://raw.githubusercontent.com/Kageshin/arch-setup/refs/heads/main/bo
 - [grub-btrfs](#grub-btrfs)
 - [yay](#yay)
 - [Language Servers](#lsps)
+- [Alacritty](#alacitty)
 
 ### zsh
 
@@ -119,3 +122,9 @@ Sprachen:
 - lua
 - ansible (+lint)
 - bash
+
+### Alacritty
+
+Terminal Emulator, configured using `~/.config/alacritty/alacritty.toml`.
+Added GitSubmodule for Themes.
+Installed ttf-jetbrains-nerd-mono font.

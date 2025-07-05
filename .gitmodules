@@ -1,0 +1,6 @@
+[submodule "dotfiles/terminal/dot-config/alacritty/themes/alacritty-theme"]
+	path = dotfiles/terminal/dot-config/alacritty/themes/alacritty-theme
+	url = https://github.com/alacritty/alacritty-theme
+[submodule "dotfiles/terminal/dot-config/alacritty/alacritty-theme"]
+	path = dotfiles/terminal/dot-config/alacritty/alacritty-theme
+	url = https://github.com/alacritty/alacritty-theme

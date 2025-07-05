@@ -20,5 +20,6 @@ openssh
 ripgrep
 stow
 terminus-font
+ttf-jetbrains-mono-nerd
 zsh
 zoxide
