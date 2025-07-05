@@ -1,12 +1,28 @@
 # Installiere die nötigen Packages für unterschiedliche LSPs
-- name: Installiere LSPs
+
+- name: Lua LSP
   become: true
   pacman:
     name:
-      - lua-language-server
-      - ansible-lint
+      - lua-language-server   # Lua Language Server
+      - stylua                # Lua Formatter
+    state: present
+
+- name: Bash LSP
+  become: true
+  pacman:
+    name:
+      - bash-language-server  # Bash Language Server
+      - shellcheck            # Bash Linter
+      - shfmt                 # Bash Formatter
+    state: present
+
+- name: Ansible LSP
+  become: true
+  pacman:
+    name:
       - ansible-language-server
-      - bash-language-server
+      - ansible-lint
     state: present
 
 - name: Installiere iwe via cargo
